@@ -1,8 +1,10 @@
 from pyrogram import Client
-
-api_id = 29221068
-api_hash = "1059aa7321cb582070917e7bac492f5f"
-bot_token = "6953750855:AAEvPUtTzM9IfafZQiFFqN3J66o8GZZprZc"
+import json
+with open("api.json") as f:
+    data = json.load(f)
+    api_id = data["api_id"]
+    api_hash = data["api_hash"]
+    bot_token = data["bot_token"]
 
 app = Client(
     "my_bot",
